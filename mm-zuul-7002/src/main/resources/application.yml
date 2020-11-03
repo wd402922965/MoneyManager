@@ -6,7 +6,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://10.12.155.82:7001
+      defaultZone: http://10.12.155.82:7001/eureka
 
 zuul:
   routes:
