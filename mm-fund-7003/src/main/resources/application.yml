@@ -1,0 +1,9 @@
+server:
+  port: 7002
+spring:
+  application:
+    name: ZUUL
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.12.155.82:7001
