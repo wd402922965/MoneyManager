@@ -11,6 +11,7 @@
         <module>mm-eureka-7001</module>
         <module>mm-zuul-7002</module>
         <module>mm-common</module>
+        <module>mm-fund-7003</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
