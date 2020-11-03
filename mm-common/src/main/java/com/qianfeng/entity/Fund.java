@@ -5,19 +5,19 @@ import lombok.Data;
 import java.util.Date;
 @Data
 public class Fund {
-    String id;
-    Integer hot;
-    Double grim;
-    Double tworth;
-    String info;
+    private  String id;
+    private  Integer hot;
+    private Double grim;
+    private Double tworth;
+    private String info;
     /*历史业绩id*/
-    Integer hid;
-    Integer level;
-    Double worth;
+    private Integer hid;
+    private Integer level;
+    private Double worth;
     /*关联公司id*/
-    Integer coid;
-    String name;
-    Integer tid;
+    private Integer coid;
+    private String name;
+    private Integer tid;
     /*上架时间*/
-    Date date;
+    private Date date;
 }
