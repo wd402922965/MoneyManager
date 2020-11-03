@@ -1,0 +1,15 @@
+server:
+  port: 7002
+spring:
+  application:
+    name: ZUUL
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+zuul:
+  routes:
+    USER: /user/**
+    FUND: /fund/**
+    FORUM: /forum/**
