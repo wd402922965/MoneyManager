@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: FORUM
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/monmanager?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.12.155.82:7001/eureka
+server:
+  port: 7005
+mybatis-plus:
+  configuration:
+    #控制台输出日志 默认
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

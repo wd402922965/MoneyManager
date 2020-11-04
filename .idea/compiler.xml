@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mm-forum-7005" />
         <module name="mm-fund-7003" />
         <module name="mm-zuul-7002" />
         <module name="mm-fund" />
-        <module name="mm-common" />
         <module name="mm-eureka-7001" />
+        <module name="mm-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +22,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="mm-common" options="-parameters" />
       <module name="mm-eureka-7001" options="-parameters" />
+      <module name="mm-forum-7005" options="-parameters" />
       <module name="mm-fund" options="-parameters" />
       <module name="mm-fund-7003" options="-parameters" />
       <module name="mm-zuul-7002" options="-parameters" />
