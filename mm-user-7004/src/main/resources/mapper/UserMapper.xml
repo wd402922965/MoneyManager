@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.UserDao">
+
+    <resultMap id="user" type="com.qianfeng.entity.User">
+        <id column="u_id" property="id"/>
+        <result column="u_name" property="userName"/>
+        <result column="u_password" property="password"/>
+        <result column="u_email" property="email"/>
+        <result column="u_code" property="code"/>
+        <result column="u_pic" property="pic"/>
+        <result column="u_money" property="money"/>
+        <result column="u_role" property="role"/>
+        <result column="f_id" property="fid"/>
+    </resultMap>
+
+    <select id="findId" resultMap="user">
+        select * from mo_user where u_name = #{userName}
+    </select>
+
+    <select id="findById" resultMap="user">
+        select * from mo_user where u_id = #{id}
+    </select>
+
+    <update id="updateUser" parameterType="com.qianfeng.entity.User">
+        update mo_user set
+        u_username = #{username},
+        u_password = #{password},
+        u_age = #{age},
+        u_sex = #{sex},
+        u_professional = #{professional},
+        u_phone = #{phone},
+        u_pic= #{pic}
+        where u_id = #{id}
+    </update>
+
+    <!--修改邮箱-->
+    <!--先查询有没有重复-->
+    <select id="findEmail" resultMap="user">
+        select * from mo_user where u_email = #{email}
+    </select>
+    <!--判断该邮箱未被绑定以后,在修改-->
+    <update id="updateEmail" parameterType="com.qianfeng.entity.User">
+        update mo_user set u_email = #{email} where u_id = #{id}
+    </update>
+</mapper>

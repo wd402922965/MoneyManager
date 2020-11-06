@@ -12,6 +12,8 @@
         <module>mm-zuul-7002</module>
         <module>mm-common</module>
         <module>mm-fund-7003</module>
+        <module>mm-user-7004</module>
+        <module>mm-email</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
