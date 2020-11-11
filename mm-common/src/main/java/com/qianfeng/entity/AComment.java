@@ -18,7 +18,7 @@ import static com.baomidou.mybatisplus.annotation.IdType.ID_WORKER_STR;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Comment {
+public class AComment {
     @TableId(type = ID_WORKER_STR)
     private String mcId;
     private String uId;

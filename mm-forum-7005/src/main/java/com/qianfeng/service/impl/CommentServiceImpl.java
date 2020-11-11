@@ -1,7 +1,7 @@
 package com.qianfeng.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.qianfeng.entity.Comment;
+import com.qianfeng.entity.AComment;
 import com.qianfeng.mapper.CommentMapper;
 import com.qianfeng.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,21 +21,21 @@ public class CommentServiceImpl implements CommentService {
      * @return
      */
     @Override
-    public List<Comment> findCommentByMaId(String maId) {
-        QueryWrapper<Comment> wrapper = new QueryWrapper<>();
+    public List<AComment> findCommentByMaId(String maId) {
+        QueryWrapper<AComment> wrapper = new QueryWrapper<>();
        wrapper.eq("ma_id", maId);
-        List<Comment> comments = commentMapper.selectList(wrapper);
-        return comments;
+        List<AComment> AComments = commentMapper.selectList(wrapper);
+        return AComments;
     }
 
     /**
      * 添加一条评论
-     * @param comment
+     * @param AComment
      * @return
      */
     @Override
-    public int addComment(Comment comment) {
-        int insert = commentMapper.insert(comment);
+    public int addComment(AComment AComment) {
+        int insert = commentMapper.insert(AComment);
         return insert;
     }
 }

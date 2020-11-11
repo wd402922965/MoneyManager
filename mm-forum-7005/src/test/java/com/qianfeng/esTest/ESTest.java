@@ -1,12 +1,9 @@
 package com.qianfeng.esTest;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.qianfeng.entity.Article;
-import com.qianfeng.entity.Comment;
 import com.qianfeng.mapper.ArticleMapper;
 import com.qianfeng.mapper.CollectMapper;
 import org.elasticsearch.action.index.IndexRequest;
-import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +11,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;

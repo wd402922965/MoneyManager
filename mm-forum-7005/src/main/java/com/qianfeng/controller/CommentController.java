@@ -1,6 +1,6 @@
 package com.qianfeng.controller;
 
-import com.qianfeng.entity.Comment;
+import com.qianfeng.entity.AComment;
 import com.qianfeng.pojo.BaseResult;
 import com.qianfeng.pojo.ResultCode;
 import com.qianfeng.service.CommentService;
@@ -8,7 +8,6 @@ import com.qianfeng.utils.GetUId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
@@ -26,8 +25,8 @@ public class CommentController {
      */
     @GetMapping("/comment/{maId}")
     public BaseResult findByMaId(@PathVariable("maId") String maId){
-        List<Comment> comments = commentService.findCommentByMaId(maId);
-        return new BaseResult(ResultCode.SUCCESS,comments);
+        List<AComment> AComments = commentService.findCommentByMaId(maId);
+        return new BaseResult(ResultCode.SUCCESS, AComments);
     }
 
     /**
@@ -45,11 +44,11 @@ public class CommentController {
         System.out.println(uId);
 
         //通过jwt获得当前uid,先用假数据代替
-        Comment comment = new Comment();
-        comment.setMaId(maId);
-        comment.setMcComment(com);
-        comment.setUId(uId);
-        int i = commentService.addComment(comment);
+        AComment AComment = new AComment();
+        AComment.setMaId(maId);
+        AComment.setMcComment(com);
+        AComment.setUId(uId);
+        int i = commentService.addComment(AComment);
         if( i != 0){
             return new BaseResult(ResultCode.SUCCESS,"评论成功");
         }
