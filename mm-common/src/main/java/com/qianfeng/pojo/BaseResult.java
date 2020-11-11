@@ -2,8 +2,10 @@ package com.qianfeng.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+
 @AllArgsConstructor
 public class BaseResult {
     private boolean success;//是否成功

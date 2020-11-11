@@ -1,0 +1,9 @@
+server:
+  port: 7003
+spring:
+  application:
+    name: FUND
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.12.155.82:7001/eureka
