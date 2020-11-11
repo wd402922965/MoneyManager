@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: FORUM
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/monmanager?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+      #能被任何消息接收
+      virtual-host: /
+    redis:
+      host: localhost
+      port: 6379
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+server:
+  port: 7005
+mybatis-plus:
+  configuration:
+    #控制台输出日志 默认
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+springcloud-es:
+  elasticsearch:
+    hostlist: ${eshostlist:10.12.155.84:9200} #多个结点中间用逗号分隔
