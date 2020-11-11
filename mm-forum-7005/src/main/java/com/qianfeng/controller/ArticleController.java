@@ -7,6 +7,7 @@ import com.qianfeng.pojo.BaseResult;
 import com.qianfeng.pojo.HighResult;
 import com.qianfeng.pojo.ResultCode;
 import com.qianfeng.service.ArticleService;
+import com.qianfeng.utils.GetUId;
 import com.qianfeng.utils.IdWorker;
 import com.qianfeng.utils.SevenUtils;
 import org.apache.commons.lang.StringUtils;
@@ -16,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -158,13 +160,15 @@ public class ArticleController {
      * @return
      */
     @PostMapping("/addArticle")
-    public BaseResult addArticle(@RequestBody Map map){
+    public BaseResult addArticle(@RequestBody Map map, HttpServletRequest request){
         //前端获得文章对象 Html格式
         String content = map.get("html").toString();
         //获得文章标题
         String title = map.get("title").toString();
         //当前用户由jwT解析获得uid
-        String uid = "test";
+        String token = GetUId.getToken(request);
+        String uId = GetUId.getUId(token);
+
         //文章生成id
         String maId = idWorker.nextId() + "";
         //将正文使用createArticle方法生成url
@@ -173,7 +177,7 @@ public class ArticleController {
         Article article = new Article();
         article.setMaContent(url);
         article.setMaId(maId);
-        article.setUId(uid);
+        article.setUId(uId);
         article.setMaTitle(title);
         //返回文章上传成功的信息
         int i = articleService.addArticle(article);
@@ -184,11 +188,12 @@ public class ArticleController {
     }
 
     @PostMapping("/collect")
-    public BaseResult collect(@RequestBody Map map){
+    public BaseResult collect(@RequestBody Map map,HttpServletRequest request){
         //获得文章id
         String maId = map.get("maId").toString();
         //从cookie里获取用户id
-        String uId = "12";
+        String token = GetUId.getToken(request);
+        String uId = GetUId.getUId(token);
         Collect collect = new Collect();
         collect.setMaId(maId);
         collect.setUId(uId);
