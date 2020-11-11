@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mm-rabbitMQ-8001" />
         <module name="mm-forum-7005" />
         <module name="mm-fund-7003" />
         <module name="mm-zuul-7002" />
@@ -25,6 +26,7 @@
       <module name="mm-forum-7005" options="-parameters" />
       <module name="mm-fund" options="-parameters" />
       <module name="mm-fund-7003" options="-parameters" />
+      <module name="mm-rabbitMQ-8001" options="-parameters" />
       <module name="mm-zuul-7002" options="-parameters" />
     </option>
   </component>

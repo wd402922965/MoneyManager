@@ -25,13 +25,13 @@ public class Article {
     @TableField(fill = FieldFill.INSERT)
     private Date createTime; //发表时间
     @TableField("ma_isCom")
-    private Integer maIsCom; //是否可以评论 1 可以
+    private Integer maIsCom = 1; //是否可以评论 1 可以
     private String uId; //发表用户的id
-    private Integer maClick; //点击数
-    private Integer maCom; //评论数
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
-    @JsonFormat(pattern = "yyyy-MM-dd hh:mm")
+    private Integer maClick = 0; //点击数
+    private Integer maCom = 0; //评论数
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date updateTime; //最新更新时间
-    private Integer maIstop; // 是否置顶
+    private Integer maIstop = 0; // 是否置顶
 }

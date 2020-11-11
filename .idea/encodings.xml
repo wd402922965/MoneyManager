@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/mm-eureka-7001/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mm-forum-7005/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mm-fund-7003/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mm-rabbitMQ-8001/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mm-zuul-7002/src/main/java" charset="UTF-8" />
   </component>
 </project>

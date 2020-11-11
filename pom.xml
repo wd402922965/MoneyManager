@@ -13,6 +13,7 @@
         <module>mm-common</module>
         <module>mm-fund-7003</module>
         <module>mm-forum-7005</module>
+        <module>mm-rabbitMQ-8001</module>
     </modules>
     <packaging>pom</packaging>
     <parent>

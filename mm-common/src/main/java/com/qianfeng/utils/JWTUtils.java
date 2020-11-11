@@ -17,9 +17,9 @@ import java.util.Map;
 public class JWTUtils {
   private static final String KEY = "secret";
 
-  public static String getJWT(String id,String name,Map<String,String> map2){
+  public static String getJWT(String name,Map<String,String> map2){
     Calendar instance = Calendar.getInstance();
-    instance.add(Calendar.SECOND,60);
+    instance.add(Calendar.HOUR,10);
 
 
     //定义加密的算法，添加一个秘钥
@@ -36,7 +36,6 @@ public class JWTUtils {
     String token = builder.withHeader(map)
         //创建的主体
         .withSubject(name)
-        .withJWTId(id)
         //令牌签发时间
         .withIssuedAt(new Date())
         //令牌过期时间
